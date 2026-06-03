@@ -1,0 +1,69 @@
+{
+  "name": "Product Refinement - Mock API Integration",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1232,
+        -272
+      ],
+      "id": "183bf8fb-1896-492f-b453-389125c45351",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8000/product-refinement/generate",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "epic_key",
+              "value": "CARD-245"
+            },
+            {
+              "name": "product_context",
+              "value": "B2B debit card request flow for individuals and legal entities"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -944,
+        -464
+      ],
+      "id": "e7e9b024-d11a-4303-8a37-ead466862575",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "ded2b2f9-8d1b-40c0-bcff-be344a3510e4",
+  "meta": {
+    "instanceId": "3041c671e993ba7a15983c38290ce6096a639352fd61ff9fd5a80b29a3d01bd5"
+  },
+  "id": "QWIhhtw0j3itCz5a",
+  "tags": []
+}
