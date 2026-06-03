@@ -21,12 +21,12 @@ The first use case focuses on helping a Product Owner transform a Jira epic and 
 
 ## Start project
 
-bash ./scripts/start.sh 
+bash ./scripts/start-local-services.sh
 
 ## Stop project
 
-bash ./scripts/stop.sh 
+bash ./scripts/stop-local-services.sh
 
 ## Run Playwright validation
 
-bash ./venv/bin/python3 scripts/playwright_test.py 
+bash ./venv/bin/python3 scripts/validate-playwright-setup.py 
